@@ -1,0 +1,511 @@
+/* --- Variáveis de Cores e Estilos --- */
+:root {
+    --primary-color: #0c2d48; /* Azul Escuro */
+    --secondary-color: #f6d155; /* Dourado */
+    --background-dark: #0c2d48;
+    --background-light: #000000ff; /* Fundo principal */
+    --text-dark: #ffffffff;
+    --text-light: #ffffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos Globais e de Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho (Hero Section) --- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000ff;
+    color: var(--text-dark);
+    padding: 10px 40px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.logo {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Esta classe não é usada no HTML, a removi. */
+/* .header-text-container {
+    text-align: left;
+    width: 35%;
+} */
+
+/* Estas regras podem ser removidas já que não existem no HTML. */
+/* .hero h1 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 0.9em;
+    font-weight: 400;
+} */
+
+/* --- Barra de Navegação --- */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 45%;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.main-nav li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.main-nav li a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* --- Estilos Comuns para Seções --- */
+.section {
+    padding: 40px 0;
+    /* Aplicado no main para um degradê contínuo */
+    background: transparent; 
+}
+
+.section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+/* --- Seção de Convite --- */
+.invitation-section {
+    z-index: 10;
+    position: relative;
+    margin: 1px 20px 0 20px;
+    padding: 40px 20px;
+}
+
+.invitation-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.invitation-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.invitation-official-image {
+    width: 500px;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.invitation-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.detail-box {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.detail-box h3 {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.address {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* --- Seção Sobre o Evento --- */
+.about-section p {
+    margin-bottom: 15px;
+}
+
+/* --- Seção de Certificação --- */
+.certification-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.certification-text {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.certification-image-wrapper {
+    flex-shrink: 0;
+    width: 290px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certification-image {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+/* --- Seção de Galeria de Fotos --- */
+.gallery-section {
+    background: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.gallery-section h2 {
+    color: var(--secondary-color);
+}
+
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.gallery-photo.active {
+    opacity: 1;
+}
+
+.gallery-note {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--secondary-color);
+}
+
+/* Correção: Não há necessidade de re-declarar estes estilos, mas os mantive. */
+.invitation-section,
+.about-section,
+.certification-section {
+    background: transparent;
+    color: var(--text-dark); /* Garante a cor correta do texto */
+}
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .logo-container, 
+    /* .header-text-container, */ 
+    .main-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* .hero h1 {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    .hero p {
+        font-size: 1em;
+    } */
+
+    .invitation-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .invitation-text {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .invitation-official-image {
+        max-width: 80%;
+    }
+
+    .detail-box {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav li a {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* .hero h1 {
+        font-size: 1.8em;
+    } */
+
+    .main-nav li a {
+        font-size: 0.7em;
+        padding: 6px 8px;
+    }
+
+    .detail-box {
+        min-width: 100%;
+    }
+}
+
+/* --- Seção Elisangela Dias --- */
+.elisangela-section {
+    background: #000;
+    color: var(--text-light);
+    text-align: left;
+    padding: 60px 20px;
+}
+
+.elisangela-section h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.elisangela-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 10px auto 40px;
+}
+
+.elisangela-section .container {
+    display: flex;
+    align-items: stretch; /* imagem estica junto com o texto */
+    gap: 60px;
+}
+
+.elisangela-text {
+    flex: 2; /* texto ocupa mais espaço */
+}
+
+.elisangela-text h2, 
+.elisangela-text h3 {
+    text-align: left;
+}
+
+.elisangela-image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elisangela-image {
+    width: auto;
+    height: 100%; /* cresce na vertical */
+    max-height: 100%; 
+    object-fit: contain;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* --- Media Queries (Responsividade) --- */
+@media (max-width: 992px) {
+    .elisangela-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .elisangela-text h2, 
+    .elisangela-text h3 {
+        text-align: center;
+    }
+
+    .elisangela-image-wrapper {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Correção do nome da classe (minúscula) */
+.foto-socios {
+    width: 300px; 
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+}
+
+/* --- Seção Sobre o Evento --- */
+.about-section .conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.about-section .foto-socios {
+    width: 300px; 
+    height: auto; 
+    border-radius: 8px;
+    flex-shrink: 0; 
+}
+
+.about-section .texto {
+    flex: 1;
+    color: var(--text-dark);
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    margin-bottom: 15px;
+    text-align: left; 
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+/* Responsivo - tela pequena */
+@media (max-width: 768px) {
+    .about-section .conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-section .texto {
+        text-align: left;
+        width: 100%;
+    }
+
+    .about-section .foto-socios {
+        margin-bottom: 20px;
+        width: 80%; 
+        max-width: 350px;
+    }
+}
